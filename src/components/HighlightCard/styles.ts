@@ -76,3 +76,4 @@ export const HighlightCards = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: true,
   contentContainerStyle: { paddingHorizontal: 24 }
 })``;
+
