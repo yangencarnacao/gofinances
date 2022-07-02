@@ -20,7 +20,7 @@ export const Header = styled.View`
 `;
 
 export const UserWrapper = styled.View`
-width:100%;
+    width:100%;
 
     margin-top:${RFValue(Constants.statusBarHeight)}px;
     padding: 0 ${RFValue(24)}px;
@@ -79,10 +79,19 @@ export const HighlightCards = styled.ScrollView.attrs({
 `;
 
 export const Transactions = styled.View`
-  flex: 1%;
+  /* width: 100%; */
+  /* align-items: flex-start; */
+  flex: 1;
   padding: 0 24px;
 
   margin-top: ${RFPercentage(12)}px;
+
+  /* width: 100%;
+  height: ${RFPercentage(42)}px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row; */
+
 `;
 
 
@@ -93,3 +102,8 @@ export const Title = styled.Text`
   margin-bottom: 16px;
 
   `;
+
+export const TransactionList = styled.FlatList`
+
+
+`;
