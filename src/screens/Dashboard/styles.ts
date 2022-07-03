@@ -98,7 +98,7 @@ export const Title = styled.Text`
 
   `;
 
-/* ESTAVA DANDO ERRO DE TIPAGEM NO FLATLISTPROPS, SOLUÇÃO FOI PROPS TIPADA COMO FlatListProps<DataListProps>
+/* ESTAVA DANDO ERRO DE TIPAGEM NO FLATLISTPROPS, SOLUÇÃO FOI PASSAR A PROPS TIPADA COMO FlatListProps<DataListProps>
 https://app.rocketseat.com.br/h/forum/react-native/7aa176ac-19aa-4ae7-b6f8-b4b5558808b1 */
 export const TransactionList = styled(
   FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>
