@@ -1,8 +1,11 @@
 import styled from 'styled-components/native';
+import { FlatList, FlatListProps } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import Constants  from 'expo-constants';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
+import { DataListProps } from '.';
 
 export const Container = styled.View`
     flex: 1;
@@ -79,19 +82,11 @@ export const HighlightCards = styled.ScrollView.attrs({
 `;
 
 export const Transactions = styled.View`
-  /* width: 100%; */
-  /* align-items: flex-start; */
+
   flex: 1;
   padding: 0 24px;
 
   margin-top: ${RFPercentage(12)}px;
-
-  /* width: 100%;
-  height: ${RFPercentage(42)}px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: row; */
-
 `;
 
 
@@ -103,7 +98,13 @@ export const Title = styled.Text`
 
   `;
 
-export const TransactionList = styled.FlatList`
-
-
-`;
+/* ESTAVA DANDO ERRO DE TIPAGEM NO FLATLISTPROPS, SOLUÇÃO FOI PROPS TIPADA COMO FlatListProps<DataListProps>
+https://app.rocketseat.com.br/h/forum/react-native/7aa176ac-19aa-4ae7-b6f8-b4b5558808b1 */
+export const TransactionList = styled(
+  FlatList as new (props: FlatListProps<DataListProps>) => FlatList<DataListProps>
+  ).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+  paddingBottom: getBottomSpace()
+  }
+})``;
