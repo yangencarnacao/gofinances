@@ -13,7 +13,8 @@ import {
 
 import theme from './src/global/styles/theme';
 
-import { Dashboard } from './src/screens/Dashboard';
+// import { Dashboard } from './src/screens/Dashboard';
+import { Register } from './src/screens/Register';
 
 
 export default function App() {
@@ -27,6 +28,12 @@ export default function App() {
     return <AppLoading />
   }
 
+  // return (
+  //   <ThemeProvider theme={theme}>
+  //    <Register />
+  // </ThemeProvider>}
+  // )
+
   return (
     <ThemeProvider theme={theme}>
     <StatusBar
@@ -34,7 +41,7 @@ export default function App() {
         translucent
         barStyle="light-content"
       />
-      <Dashboard />
+      <Register />
     </ThemeProvider>
   );
 }
