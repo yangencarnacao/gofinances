@@ -144,3 +144,16 @@
 //   "gitlens.codeLens.enabled": false,
 //   "workbench.iconTheme": "material-icon-theme"
 // }
+
+// ORIGAMID CONFIGS VSCODE
+{
+  "editor.fontFamily": "IBM Plex Mono, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 25,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Origamid",
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": 0,
+}
+// ORIGAMID CONFIGS VSCODE
