@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Input } from '../../components/Form/Input';
 import { Button } from '../../components/Form/Button';
 import { TransactionTypeButton } from '../../components/Form/TransactionTypeButton';
+import { CategorySelect } from '../../components/Form/CategorySelect';
+
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
 
 
 import {
@@ -10,7 +15,7 @@ import {
     Title,
     Form,
     Fields,
-    TransactionsType,
+    TransactionsTypes,
  } from './styles';
 
 export function Register () {
@@ -33,7 +38,7 @@ export function Register () {
         <Input
         placeholder='Preço'
         />
-        <TransactionsType>
+        <TransactionsTypes>
         <TransactionTypeButton
           type="up"
           title="Income"
@@ -46,7 +51,9 @@ export function Register () {
           onPress={() => handleTransactionsTypeSelect('down')}
           isActive={transactionType === 'down'}
         />
-        </TransactionsType>
+        </TransactionsTypes>
+
+        <CategorySelect title='Categoria'/>
         </Fields>
 
         <Button title='Enviar' />
