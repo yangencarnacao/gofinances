@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { Modal } from 'react-native';
 import { Input } from '../../components/Form/Input';
 import { Button } from '../../components/Form/Button';
 import { TransactionTypeButton } from '../../components/Form/TransactionTypeButton';
-import { CategorySelect } from '../../components/Form/CategorySelect';
+import { CategorySelectButton } from '../../components/Form/CategorySelectButton';
 
-import * as SplashScreen from 'expo-splash-screen';
+// import * as SplashScreen from 'expo-splash-screen';
 
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
+import { CategorySelect} from '../CategorySelect';
 
 import {
     Container,
@@ -20,9 +22,19 @@ import {
 
 export function Register () {
     const [transactionType, setTransactionType] = useState('');
+    const [categoryModalOpen, setcategoryModalOpen] = useState(false);
+
+    const [category, setCategory] = useState({
+      key: 'category',
+      name: 'Category',
+    });
 
     function handleTransactionsTypeSelect(type: 'up' | 'down'){
       handleTransactionsTypeSelect(type);
+    }
+
+    function handleCloseSelectCategory(){
+      setcategoryModalOpen(false);
     }
 
     return (
@@ -53,11 +65,19 @@ export function Register () {
         />
         </TransactionsTypes>
 
-        <CategorySelect title='Categoria'/>
+        <CategorySelectButton title='Categoria'/>
         </Fields>
 
         <Button title='Enviar' />
         </Form>
+
+        <Modal visible={categoryModalOpen}>
+          <CategorySelect
+            category ={category}
+            setCategory={setCategory}
+            closeSelectCategory ={handleCloseSelectCategory}          
+          />
+        </Modal>
 
     </Container>
     );

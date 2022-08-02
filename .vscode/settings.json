@@ -152,7 +152,7 @@
   "editor.lineHeight": 25,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
-  "workbench.colorTheme": "Origamid",
+  "workbench.colorTheme": "Omni",
   "workbench.startupEditor": "newUntitledFile",
   "window.zoomLevel": 0,
 }

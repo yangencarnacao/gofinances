@@ -29,14 +29,14 @@ export function HighlightCard({
   title,
   amount,
   lastTransaction
-} : Props){
+}: Props) {
   return (
     <Container type={type}>
       <Header>
         <Title type={type}>
           {title}</Title>
         <Icon type={type}
-        name={icon[type]}
+          name={icon[type]}
         />
       </Header>
 
