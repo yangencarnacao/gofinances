@@ -1,12 +1,11 @@
- import React from 'react';
-import { FlatList } from 'react-native';
-import styled from 'styled-components';
+import React from 'react';
+import { FlatList } from 'react-native-gesture-handler';
 
 import { Button } from '../../components/Form/Button';
 
 import { categories } from '../../utils/categories';
 
- import { 
+import {
   Container,
   Header,
   Title,
@@ -14,44 +13,57 @@ import { categories } from '../../utils/categories';
   Icon,
   Name,
   Separator,
-  Footer,  
- } from './styles';
+  Footer,
+} from './styles';
 
- interface Category {
+interface Category {
   key: string;
   name: string;
- }
+}
 
- interface Props {
-  category: string;
+interface Props {
+  category: Category;
   setCategory: (category: Category) => void;
   closeSelectCategory: () => void;
- }
+}
 
- export function CategorySelect({ 
+export function CategorySelect({
   category,
   setCategory,
   closeSelectCategory
-}: Props ){
-  return(
+} : Props ){
+
+  function handleCategorySelect(category: Category){
+    setCategory(category);
+  }
+
+  return (
     <Container>
       <Header>
         <Title>Categoria</Title>
       </Header>
+
       <FlatList
-      data={categories}
-      style={{ flex: 1, width: '100%'}}
-      keyExtrator={(item) => item.key}
-      renderItem={( { item }) => (
-        <Category>
-          <Icon name={item.icon} />
-          <Name>{item.name}</Name>
-        </Category>
-      )}
-      ItemSeparatorComponent={() => <Separator />}
+        data={categories}
+        style={{ flex: 1, width: '100%'}}
+        keyExtractor={(item) => item.key}
+        renderItem={({ item }) => (
+          <Category
+            onPress={() => handleCategorySelect(item)}
+            isActive={category.key === item.key}
+          >
+            <Icon name={item.icon} />
+            <Name>{item.name}</Name>
+          </Category>
+        )}
+        ItemSeparatorComponent={() => <Separator />}
       />
+
       <Footer>
-        <Button title="Selecionar" />
+        <Button
+          title="Selecionar"
+          onPress={closeSelectCategory}
+        />
       </Footer>
     </Container>
   )

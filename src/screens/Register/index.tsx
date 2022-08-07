@@ -22,19 +22,24 @@ import {
 
 export function Register () {
     const [transactionType, setTransactionType] = useState('');
-    const [categoryModalOpen, setcategoryModalOpen] = useState(false);
+    const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
     const [category, setCategory] = useState({
       key: 'category',
-      name: 'Category',
+      name: 'Categoria',
     });
 
     function handleTransactionsTypeSelect(type: 'up' | 'down'){
-      handleTransactionsTypeSelect(type);
-    }
+      // handleTransactionsTypeSelect(type);
+      setTransactionType(type);
 
-    function handleCloseSelectCategory(){
-      setcategoryModalOpen(false);
+    }
+  function handleOpenSelectCategoryModal(){
+    setCategoryModalOpen(true);
+  }
+
+  function handleCloseSelectCategoryModal(){
+    setCategoryModalOpen(false);
     }
 
     return (
@@ -65,7 +70,10 @@ export function Register () {
         />
         </TransactionsTypes>
 
-        <CategorySelectButton title='Categoria'/>
+        <CategorySelectButton
+         title={category.name}
+         onPress={handleOpenSelectCategoryModal}        
+         />
         </Fields>
 
         <Button title='Enviar' />
@@ -75,7 +83,7 @@ export function Register () {
           <CategorySelect
             category ={category}
             setCategory={setCategory}
-            closeSelectCategory ={handleCloseSelectCategory}          
+            closeSelectCategory ={handleCloseSelectCategoryModal}          
           />
         </Modal>
 
