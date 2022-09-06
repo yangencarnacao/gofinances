@@ -13,7 +13,8 @@ import {
 
 import theme from './src/global/styles/theme';
 
-// import { Dashboard } from './src/screens/Dashboard';
+import { NavigationContainer } from '@react-navigation/native'
+
 import { Register } from './src/screens/Register';
 
 
@@ -27,12 +28,6 @@ export default function App() {
   if(!fontsLoaded){
     return <AppLoading />
   }
-
-  // return (
-  //   <ThemeProvider theme={theme}>
-  //    <Register />
-  // </ThemeProvider>}
-  // )
 
   return (
     <ThemeProvider theme={theme}>

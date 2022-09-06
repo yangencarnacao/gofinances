@@ -40,8 +40,7 @@ const schema = Yup.object().shape({
   .number()
   .typeError('Informe um valor numérico')
   .positive('O valor não pode ser negativo')
-  .required('O valor é obrigatório')
-
+  
 })
 
 export function Register () {
@@ -120,7 +119,7 @@ export function Register () {
           type="up"
           title="Income"
           onPress={() => handleTransactionsTypeSelect('up')}
-          isActive={transactionType === 'positive'}
+          isActive={transactionType === 'up'}
         />
         <TransactionTypeButton
           type="down"

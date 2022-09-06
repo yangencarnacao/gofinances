@@ -1,0 +1,5 @@
+## all the libs used ##
+yarn add react-hook-form
+yarn add @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+yarn add @react-navigation/bottom-tabs
