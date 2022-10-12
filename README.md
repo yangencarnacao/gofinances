@@ -4,7 +4,7 @@ Projeto Aplicativo de Finanças em React Native Curso da RocketSeat
 # ⌨ Como executar o projeto
 
 # Clonar o repositório
-git clone https://github.com/Ca-byte/gofinances_react_native_ignite
+git clone https://github.com/yangencarnacao/gofinances.git
 
 # Entrar no diretório
 cd gofinances_react_native_ignite
